@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbwf6f3h17oej"]
+
+[ext_resource type="Script" path="res://Code/junk.gd" id="1_2ab6y"]
+[ext_resource type="Texture2D" uid="uid://i2b4uad7hrfc" path="res://Assets/Sprites/Buddy.png" id="2_fal43"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2ab6y")
+
+[node name="Button" type="Button" parent="."]
+light_mask = 0
+visibility_layer = 0
+offset_left = -61.0
+offset_top = -38.0
+offset_right = 61.0
+offset_bottom = 38.0
+
+[node name="Buddy" type="Sprite2D" parent="."]
+position = Vector2(0.5, -0.25)
+scale = Vector2(6.15, 2.18571)
+texture = ExtResource("2_fal43")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

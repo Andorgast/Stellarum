@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhulbj6h0ss0r"]
+
+[ext_resource type="Script" path="res://Code/Spelrdle.gd" id="1_fit72"]
+[ext_resource type="Texture2D" uid="uid://i2b4uad7hrfc" path="res://Assets/Sprites/Buddy.png" id="2_qybev"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fit72")
+
+[node name="Buddy3" type="Sprite2D" parent="."]
+position = Vector2(257, 374)
+scale = Vector2(6.2, 4.90828)
+texture = ExtResource("2_qybev")
+
+[node name="Buddy" type="Sprite2D" parent="."]
+position = Vector2(245.75, 160.563)
+scale = Vector2(5.925, 4.825)
+texture = ExtResource("2_qybev")
+
+[node name="Buddy2" type="Sprite2D" parent="."]
+position = Vector2(263, 647)
+scale = Vector2(5.9, 5.57194)
+texture = ExtResource("2_qybev")
