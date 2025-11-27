@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn1geski1ivbo"]
+
+[ext_resource type="Script" path="res://Code/Counting.gd" id="1_n1810"]
+
+[node name="Counting" type="Node2D"]
+script = ExtResource("1_n1810")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = -76.0
+offset_top = 20.0
+offset_right = -45.0
+offset_bottom = 41.0
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -37.0
+offset_top = 20.0
+offset_right = -6.0
+offset_bottom = 41.0
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 20.0
+offset_right = 74.0
+offset_bottom = 41.0
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 35.0
+offset_bottom = 41.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MathProblem" type="RichTextLabel" parent="."]
+offset_left = -80.0
+offset_top = -45.0
+offset_right = 80.0
+
+[node name="Points" type="RichTextLabel" parent="."]
+offset_left = 30.0
+offset_top = -45.0
+offset_right = 79.0
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_pressed" binds= [NodePath(".")]]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed" binds= [NodePath(".")]]
+[connection signal="pressed" from="Button3" to="." method="_on_button_pressed" binds= [NodePath(".")]]
+[connection signal="pressed" from="Button4" to="." method="_on_button_pressed" binds= [NodePath(".")]]

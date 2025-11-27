@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i2b4uad7hrfc"
-path.s3tc="res://.godot/imported/Buddy.png-035e2dcf233e060a5f690cc82bc9e095.s3tc.ctex"
+uid="uid://pihjxgbtxxe7"
+path.s3tc="res://.godot/imported/splash-black-white-city-background-transparent-JF7orV.png-49053263c5dc2936036c8811ccee1427.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/Buddy.png"
-dest_files=["res://.godot/imported/Buddy.png-035e2dcf233e060a5f690cc82bc9e095.s3tc.ctex"]
+source_file="res://Assets/Sprites/splash-black-white-city-background-transparent-JF7orV.png"
+dest_files=["res://.godot/imported/splash-black-white-city-background-transparent-JF7orV.png-49053263c5dc2936036c8811ccee1427.s3tc.ctex"]
 
 [params]
 
