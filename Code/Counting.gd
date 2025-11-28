@@ -9,25 +9,32 @@ var buttonId = ["1", "2", "3", "4"]
 var points = 0
 var wrongAnswer
 var offMargin = 50
+var maxHealth = 5
+var health = maxHealth
 
 func _ready():
+	$Game/ProgressBar.max_value = maxHealth
+	$Game/ProgressBar.value = health
 	makeMath()
 	
-#func _process(delta):
-	#
-	#pass
+#func _process(_delta):
+
+func die():
+	$Game.visible = !$Game.visible
+	$Death.visible = !$Death.visible
+	$Death/PointText.text = "you had " + str(points) + " points"
 
 func randomButton():
 	buttonId.shuffle()
 	match buttonId.pop_front():
 		"1":
-			return $Button1
+			return $Game/Button1
 		"2":
-			return $Button2
+			return $Game/Button2
 		"3":
-			return $Button3
+			return $Game/Button3
 		"4":
-			return $Button4
+			return $Game/Button4
 		_:
 			print("failsafe tripped, restarting...")
 			buttonId = ["1", "2", "3", "4"]
@@ -107,7 +114,7 @@ func makeMath():
 		while i < elements.size():
 			problem = problem + " " + str(elements[i])
 			i = i + 1
-		$MathProblem.text = problem
+		$Game/MathProblem.text = problem
 	#elif str(answer[0]).length() >= 3:
 		#print("Too long of an answer, restarting")
 		#makeMath()
@@ -122,18 +129,35 @@ func makeWrongAnswers():
 		
 
 func _on_button_pressed(id):
-	if get_node("Button"+str(id)).text == str(answer[0]):
+	if get_node("Game/Button"+str(id)).text == str(answer[0]):
 		points = points + elements.size()
-		$Points.text = " " + str(points)
+		$Game/Points.text = " " + str(points)
 		if (difficulty + elements.size()) < difficultyMax:
 			difficulty = difficulty + elements.size()
 		else:
 			difficulty = difficultyMax - 1
 	else:
 		points = points - elements.size()
-		$Points.text = " " + str(points)
+		$Game/Points.text = " " + str(points)
+		health = health - 1
 		if (difficulty - elements.size()) > 0:
 			difficulty = difficulty - elements.size()
 		else:
 			difficulty = 1
+	if health < 1:
+		die()
+	else:
+		$Game/ProgressBar.value = health
+		makeMath()
+
+func _on_retry_button_pressed():
+	points = 0
+	difficulty = 1
+	health = maxHealth
+	die()
+	$Game/Points.text = " " + str(points)
+	$Game/ProgressBar.value = health
 	makeMath()
+
+func _on_quit_button_pressed():
+	get_tree().quit()
